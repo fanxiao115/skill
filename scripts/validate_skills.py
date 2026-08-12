@@ -1,55 +1,69 @@
 import os
 
+
 REQUIRED_SECTIONS = [
-"Purpose",
-"Use Cases",
-"Input",
-"Workflow",
-"Output",
-"Safety Guidelines",
+    "Purpose",
+    "Use Cases",
+    "Input",
+    "Workflow",
+    "Output",
+    "Safety Guidelines",
 ]
 
+
 def validate_skill(path):
-with open(path, "r", encoding="utf-8") as f:
-content = f.read()
+    with open(path, "r", encoding="utf-8") as file:
+        content = file.read().lower()
 
-```
-missing = []
+    missing = []
 
-for section in REQUIRED_SECTIONS:
-    if section not in content:
-        missing.append(section)
+    for section in REQUIRED_SECTIONS:
+        if section.lower() not in content:
+            missing.append(section)
 
-return missing
-```
+    return missing
+
 
 def main():
-skill_root = "skills"
 
-```
-failed = False
+    skill_root = "skills"
 
-for root, _, files in os.walk(skill_root):
-    for file in files:
-        if file == "SKILL.md":
+    failed = False
 
-            path = os.path.join(root, file)
+    for root, dirs, files in os.walk(skill_root):
 
-            missing = validate_skill(path)
+        for file in files:
 
-            if missing:
-                failed = True
-                print(
-                    f"{path} missing sections: {missing}"
-                )
-            else:
-                print(
-                    f"{path} validated"
-                )
+            if file == "SKILL.md":
 
-if failed:
-    exit(1)
-```
+                path = os.path.join(root, file)
 
-if **name** == "**main**":
-main()
+                missing = validate_skill(path)
+
+                if missing:
+                    failed = True
+
+                    print(
+                        f"❌ {path}"
+                    )
+
+                    print(
+                        "Missing:",
+                        missing
+                    )
+
+                else:
+                    print(
+                        f"✅ {path}"
+                    )
+
+    if failed:
+        exit(1)
+
+    print(
+        "All skills passed validation."
+    )
+
+
+if __name__ == "__main__":
+    main()
