@@ -1,0 +1,24 @@
+name: Security Check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  security-review:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Scan repository files
+        run: |
+          echo "Running security checks"
+          grep -R "sk-" . || true
+          grep -R "PRIVATE_KEY" . || true
