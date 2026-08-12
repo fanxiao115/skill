@@ -1,7 +1,7 @@
 # Open Agent Skills
 
 ![License](https://img.shields.io/github/license/fanxiao115/skill)
-![Build](https://github.com/fanxiao115/skill/actions/workflows/validate-skills.yml/badge.svg)
+![Build](https://github.com/fanxiao115/skill/actions/workflows/validate-skills.yml/badge.svg?branch=main)
 
 A collection of secure and reusable skills for AI agent software development workflows.
 
