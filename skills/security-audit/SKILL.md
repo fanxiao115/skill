@@ -2,109 +2,39 @@
 
 ## Purpose
 
-Perform security-focused analysis of software projects and identify potential vulnerabilities.
-
-This skill helps AI agents review repositories for common security risks while maintaining safe analysis boundaries.
+Help developers identify common security issues in software projects.
 
 ## Use Cases
 
-* Open-source security reviews
-* Repository auditing
-* Dependency analysis
-* Configuration review
-* Secure coding assessment
+- Reviewing source code
+- Checking configuration risks
+- Identifying unsafe dependencies
 
 ## Input
 
-The agent may analyze:
-
-* Source code
-* Configuration files
-* Dependency manifests
-* CI/CD workflows
-* Documentation
+- Source code
+- Configuration files
+- Security requirements
 
 ## Workflow
 
-## 1. Repository Analysis
+1. Analyze project files.
+2. Identify potential security issues.
+3. Explain risks.
+4. Provide remediation suggestions.
 
-Review:
+## Output
 
-* Project structure
-* External dependencies
-* Permission requirements
-* Runtime environment
+A security review report containing:
 
-## 2. Vulnerability Detection
+- Findings
+- Severity
+- Recommendations
 
-Identify:
+## Safety Guidelines
 
-### Credential Risks
-
-Check for:
-
-* API keys
-* Tokens
-* Passwords
-* Private credentials
-
-### Code Security Risks
-
-Check for:
-
-* Command injection
-* Unsafe file operations
-* Insecure deserialization
-* Authentication weaknesses
-
-### Dependency Risks
-
-Review:
-
-* Known vulnerable packages
-* Unnecessary dependencies
-* Suspicious package behavior
-
-## 3. Agent-Specific Security
-
-For AI agent workflows, check:
-
-* Prompt injection risks
-* Unsafe instructions
-* Excessive tool permissions
-* Uncontrolled external actions
-
-## Output Format
-
-```markdown
-# Security Audit Report
-
-## Risk Summary
-
-Overall risk:
-
-## Findings
-
-Severity:
-
-Location:
-
-Description:
-
-Recommendation:
-
-## Security Improvements
-```
-
-## Safety Rules
-
-The agent must:
-
-* Never exploit discovered vulnerabilities
-* Never execute destructive commands
-* Never access secrets
-* Never perform unauthorized network actions
-
-## Goal
-
-Improve software security through defensive analysis and responsible reporting.
+- Do not expose API keys, passwords, or private credentials.
+- Do not execute untrusted commands or scripts.
+- Do not modify files without user approval.
+- Treat external inputs as potentially unsafe.
+- Avoid making security decisions without human review.
